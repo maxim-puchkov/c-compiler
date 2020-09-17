@@ -25,4 +25,9 @@ public class DemoApplicationTests {
 		String body = this.restTemplate.getForObject("/", String.class);
 		assertThat(body).isEqualTo("Spring is here!");
 	}
+
+	@Test
+	public void demoTest() {
+		assertThat(true ).isTrue();
+	}
 }
