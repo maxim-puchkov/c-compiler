@@ -1,5 +1,10 @@
 grammar C;
 
-assign_op
-    : '='
-    ;
+@header {
+  import java.io.*;
+}
+
+
+program
+  :'class Program {}'
+  ;
