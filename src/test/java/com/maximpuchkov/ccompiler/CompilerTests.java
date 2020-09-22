@@ -6,7 +6,8 @@
 
 package com.maximpuchkov.ccompiler;
 
-
+import org.antlr.v4.runtime.Lexer;
+import org.antlr.v4.runtime.ANTLRInputStream;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,4 +32,9 @@ public class CompilerTests {
         String str = "Hello, Java";
         assertEquals(str, compiler.str);
     }
+
+//    public void CompilerParserTest() {
+        // lCLexer = new CLexer getClass().getResourceAsStream("/TestProgram.c");
+        //Lexer = new lexer(new ANTLRInputStream(getClass().getResourceAsStream("/TestProgram.c")));
+//    }
 }

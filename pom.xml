@@ -44,19 +44,8 @@
 			<version>4.8</version>
 		</dependency>
 		<dependency>
-			<groupId>org.antlr</groupId>
-			<artifactId>antlr4-runtime</artifactId>
-			<version>4.8</version>
-		</dependency>
-		<dependency>
 			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-engine</artifactId>
-			<version>RELEASE</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter-api</artifactId>
+			<artifactId>junit-jupiter</artifactId>
 			<version>RELEASE</version>
 			<scope>test</scope>
 		</dependency>
@@ -65,6 +54,15 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<source>11</source>
+					<target>11</target>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -77,6 +75,17 @@
 				<executions>
 					<execution>
 						<id>antlr</id>
+						<goals>
+							<goal>antlr4</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>antlr-test</id>
+						<configuration>
+							<sourceDirectory>${basedir}/src/test/antlr4</sourceDirectory>
+							<outputDirectory>${basedir}/target/generated-test-sources/antlr4</outputDirectory>
+						</configuration>
+						<phase>generate-test-sources</phase>
 						<goals>
 							<goal>antlr4</goal>
 						</goals>
